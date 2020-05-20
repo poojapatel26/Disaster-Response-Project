@@ -76,6 +76,8 @@ You can use ML Pipeline Preparation Notebook to re-train the model or tune it th
 
 ![](Screenshots/Main%20Page%201.png)
 
+![](Screenshots/Main%20Page%202.png)
+
   
 
 
