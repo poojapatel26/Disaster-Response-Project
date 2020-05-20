@@ -54,7 +54,7 @@ In the data and models folder you can find two jupyter notebook that will help y
   1. ETL Preparation Notebook: learn everything about the implemented ETL pipeline
   2. ML Pipeline Preparation Notebook: look at the Machine Learning Pipeline developed with NLTK and Scikit-Learn
   
-You can use ML Pipeline Preparation Notebook to re-train the model or tune it through a dedicated Grid Search section. In this case, it is warmly recommended to use a Linux machine to run Grid Search, especially if you are going to try a large combination of parameters. Using a standard desktop/laptop (4 CPUs, RAM 8Gb or above) it may take several hours to complete.
+You can use ML Pipeline Preparation Notebook to re-train the model or tune it through a dedicated Grid Search section. 
 
 ## Licensing, Authors, Acknowledgements
 
