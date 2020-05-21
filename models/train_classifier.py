@@ -97,7 +97,15 @@ def build_model():
                       ('tfidf',TfidfTransformer()),
                       ('clf',MultiOutputClassifier(RandomForestClassifier(n_estimators=15,n_jobs=-1)))
                         ]) 
-   return model
+                     
+   parameters = { 
+    'clf__estimator__n_estimators': [15,20],
+    'clf__estimator__max_features': ['auto','log2']
+}
+
+   cv = GridSearchCV(estimator=model,param_grid=parameters,verbose=2,n_jobs=-1)
+   return cv
+   #return model
 
 def evaluate_model(model, X_test, Y_test, category_names):
     """
@@ -114,6 +122,11 @@ def evaluate_model(model, X_test, Y_test, category_names):
     """
     #pipeline.fit(X_train,y_train)
     Y_pred=model.predict(X_test)
+    
+    for col in range(36):
+       print(Y_test.columns[col])
+       print(classification_report(Y_test.iloc[:,col], Y_pred[:,col]))
+       print('-----------------------------------------------------')
     
     overall_accuracy = (Y_pred == Y_test).mean().mean()
     print('Average overall accuracy {0:.2f}% \n'.format(overall_accuracy*100))
